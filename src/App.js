@@ -1,12 +1,15 @@
-import Sidebar from "components/Sidebar";
-import Navbar from "components/Navbar";
-import ButtonPlayerBar from "components/BottomPlayerBar";
+import Sidebar from "components/Sidebar/Sidebar";
+import Footer from "components/Footer";
 import Content from "components/Content";
 
 function App() {
   return (
     <>
-      test
+      <div className="wrapper">
+        <Sidebar />
+        <Content />
+      </div>
+      <Footer />
     </>
   );
 }
