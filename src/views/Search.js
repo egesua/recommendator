@@ -1,4 +1,4 @@
-function Search() {
+const Search = () => {
     return (
         <div>
             burasi search kisimi

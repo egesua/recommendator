@@ -8,12 +8,8 @@ function Content() {
         <main className="flex-auto">
             <Navbar />
             <Routes>
-                <Route path="/">
-                    <Home />
-                </Route>
-                <Route path="/search">
-                    <Search />
-                </Route>
+                <Route path="/" element={<Home />} />
+                <Route path="/search" element={<Search />} />
             </Routes>
             Content
         </main>
