@@ -14,3 +14,19 @@
         @apply flex
     }
 }
+
+
+#home .active {
+    background-color: #282828;
+    color: white;
+}
+
+#search .active {
+    background-color: #282828;
+    color: white;
+}
+
+#collections .active {
+    background-color: #282828;
+    color: white;
+}

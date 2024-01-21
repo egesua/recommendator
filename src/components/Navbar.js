@@ -1,6 +1,6 @@
 function Navbar() {
     return(
-        <nav>
+        <nav className="h-16 px-8 flex items-center justify-between">
             Navbar
         </nav>
     )
