@@ -67,12 +67,94 @@ const PlayIcon = ({ size }) => {
   )
 }
 
+const PauseIcon = ({size}) => {
+  return (
+    <svg viewBox="0 0 16 16" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+      <path fill="none" d="M0 0h16v16H0z" />
+      <path d="M3 2h3v12H3zm7 0h3v12h-3z" fill="currentColor"/>
+    </svg>
+  )
+}
+
+const PlayerPrevIcon = ({size}) => {
+  return (
+    <svg viewBox="0 0 16 16" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+      <path d="M13 2.5L5 7.119V3H3v10h2V8.881l8 4.619z" fill="currentColor"/>
+    </svg>
+  ) 
+}
+
+const PlayerNextIcon = ({size}) => {
+  return (
+    <svg viewBox="0 0 16 16" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+      <path d="M11 3v4.119L3 2.5v11l8-4.619V13h2V3z" fill="currentColor"/>
+    </svg>
+  ) 
+}
+
+const ShuffleIcon = ({size}) => {
+  return (
+    <svg viewBox="0 0 16 16" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+      <path d="M4.5 6.8l.7-.8C4.1 4.7 2.5 4 .9 4v1c1.3 0 2.6.6 3.5 1.6l.1.2zm7.5 4.7c-1.2 0-2.3-.5-3.2-1.3l-.6.8c1 1 2.4 1.5 3.8 1.5V14l3.5-2-3.5-2v1.5zm0-6V7l3.5-2L12 3v1.5c-1.6 0-3.2.7-4.2 2l-3.4 3.9c-.9 1-2.2 1.6-3.5 1.6v1c1.6 0 3.2-.7 4.2-2l3.4-3.9c.9-1 2.2-1.6 3.5-1.6z" fill="currentColor"/>
+    </svg>
+  ) 
+}
+
+const RepeatIcon = ({size}) => {
+  return (
+    <svg viewBox="0 0 16 16" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+      <path d="M5.5 5H10v1.5l3.5-2-3.5-2V4H5.5C3 4 1 6 1 8.5c0 .6.1 1.2.4
+      1.8l.9-.5C2.1 9.4 2 9 2 8.5 2 6.6 3.6 5 5.5 5zm9.1 1.7l-.9.5c.2.4.3.
+      8.3 1.3 0 1.9-1.6 3.5-3.5 3.5H6v-1.5l-3.5 2 3.5 2V13h4.5C13 13 15 11
+      15 8.5c0-.6-.1-1.2-.4-1.8z" fill="currentColor"/>
+    </svg>
+  ) 
+}
+
+const HeartIcon = ({size}) => {
+  return (
+    <svg viewBox="0 0 16 16" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+      <path d="M13.797 2.727a4.057 4.057 0 00-5.488-.253.558.558 0 01-.31.112.531.531 0 01-.311-.112 4.054 4.054 0 00-5.487.253c-.77.77-1.194 1.794-1.194 2.883s.424 2.113 1.168 2.885l4.462 5.223a1.791 1.791 0 002.726 0l4.435-5.195a4.052 4.052 0 001.195-2.883 4.057 4.057 0 00-1.196-2.883z" fill="currentColor" />
+    </svg>
+  ) 
+}
+
+const VolumeMuteIcon = ({size}) => {
+  return (
+    <svg viewBox="0 0 16 16" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 5v6h2.804L8 14V2L2.804 5H0zm7-1.268v8.536L3.072 10H1V6h2.0
+      72L7 3.732zm8.623 2.121l-.707-.707-2.147 2.147-2.146-2.147-.707.707L1
+      2.062 8l-2.146 2.146.707.707 2.146-2.147 2.147 2.147.707-.707L13.477 8
+      l2.146-2.147z" fill="currentColor" />
+    </svg>
+  ) 
+}
+
+const VolumeNormalIcon = ({size}) => {
+  return (
+    <svg viewBox="0 0 16 16" width={size} height={size} xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 11.032v-6h2.802l5.198-3v12l-5.198-3H0zm7 1.27v-8.54l-3.929
+      2.27H1v4h2.071L7 12.302zm4.464-2.314q.401-.925.401-1.956 0-1.032-.4-1.
+      957-.402-.924-1.124-1.623L11 3.69q.873.834 1.369 1.957.496 1.123.496
+      2.385 0 1.262-.496 2.385-.496 1.123-1.369 1.956l-.659-.762q.722-.698 1.123-1.623z" fill="currentColor" />
+    </svg>
+  ) 
+}
+
 const Icon = ({ name, size }) => {
   const icons = {
     prev: PrevIcon,
     next: NextIcon,
     downDir: DownDirIcon,
-    play: PlayIcon
+    play: PlayIcon,
+    pause: PauseIcon,
+    playerPrev: PlayerPrevIcon,
+    playerNext: PlayerNextIcon,
+    shuffle: ShuffleIcon,
+    repeat: RepeatIcon,
+    hearth: HeartIcon,
+    mute: VolumeMuteIcon,
+    normalVol: VolumeNormalIcon
   };
 
   const Component = icons[name];
