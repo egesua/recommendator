@@ -4,7 +4,7 @@ function Playlists() {
             <ul>
                 <li>
                      <a href="#" className="text-sm text-link hover:text-white flex h-8 items-center">
-                        Playlistim
+                        Kubilay
                      </a>
                 </li>
             </ul>

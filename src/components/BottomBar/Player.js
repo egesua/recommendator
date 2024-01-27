@@ -62,7 +62,7 @@ function Player() {
           </div>
         </div>
         <div className="min-w-[11.25rem] w-[30%] flex items-center justify-end">
-        <button className="w-8 h-8 flex items-center justify-center text-white text-opacity-70 hover:text-opacity-100">
+        <button onClick={controls[state.muted ? 'normalVol' : 'mute']} className="w-8 h-8 flex items-center justify-center text-white text-opacity-70 hover:text-opacity-100">
               <Icon size={16} name={volumeIcon} />
             </button>
         <div className="w-[5.813rem] max-w-full ">
@@ -70,8 +70,10 @@ function Player() {
           step={0.01}
           min={0}
           max={1}
-          value={state?.volume}
-          onChange={value => controls.volume(value)}
+          value={state.muted ? '0' : state?.volume}
+          onChange={value => {
+            controls.unmute()
+            controls.volume(value)}}
         />
         </div>
         </div>
