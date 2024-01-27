@@ -2,6 +2,7 @@ import { Icon } from "Icons"
 import { useAudio } from "react-use";
 import { secondsToTime } from "utils";
 import CustomRange from "components/CustomRange";
+import { useMemo } from "react";
 
 
 
@@ -11,6 +12,14 @@ function Player() {
     src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
     autoPlay: true,
   });
+
+  const volumeIcon = useMemo(() => {
+    if (state.volume === 0 || state.muted)
+      return 'mute'
+
+    if (state.volume > 0)
+      return 'normalVol'
+  }, [state.volume, state.muted])
 
     return (
       <div className=" flex px-4 justify-between items-center h-full">
@@ -54,8 +63,17 @@ function Player() {
         </div>
         <div className="min-w-[11.25rem] w-[30%] flex items-center justify-end">
         <button className="w-8 h-8 flex items-center justify-center text-white text-opacity-70 hover:text-opacity-100">
-              <Icon size={16} name="normalVol" />
+              <Icon size={16} name={volumeIcon} />
             </button>
+        <div className="w-[5.813rem] max-w-full ">
+        <CustomRange 
+          step={0.01}
+          min={0}
+          max={1}
+          value={state?.volume}
+          onChange={value => controls.volume(value)}
+        />
+        </div>
         </div>
       </div>
     );
