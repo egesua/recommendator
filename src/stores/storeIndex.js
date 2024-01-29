@@ -1,5 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
+import playerReducer from "stores/PlayerStore"
 
 export default configureStore({
-    reducer: {},
+    reducer: {
+        player: playerReducer
+    },
 })

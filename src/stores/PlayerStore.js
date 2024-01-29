@@ -3,10 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     current: false,
     controls: false,
-    playeing: false
+    playing: false
 }
 
-export const counterSlice = createSlice({
+export const playerSlice = createSlice({
     name: 'player',
     initialState,
     reducers: {
@@ -17,7 +17,7 @@ export const counterSlice = createSlice({
         state.controls = action.payload
        },
        setPlaying: (state, action) => {
-        state.playeing = action.payload
+        state.playing = action.payload
        }
     }
 })
