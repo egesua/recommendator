@@ -1,49 +1,45 @@
-import Section from "components/Section"
+import Section from "components/Section";
+import { Dropdown, Button } from "react-bootstrap";
 
 function Home() {
+  const dropdownItems = [
+    {
+      id: 1,
+      title: "Genre",
+    },
+    {
+      id: 2,
+      title: "Year",
+    },
+    {
+      id: 3,
+      title: "Artist",
+    },
+  ];
 
-    const items = [
-      {
-        id: 1,
-        title: "Genre",
-        description: "LoremIpsum",
-        artist: 'Ahmet',
-        image: "...",
-        src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
-      },
-      {
-        id: 2,
-        title: "Year",
-        description: "LoremIpsum",
-        artist: 'Ahmet',
-        image: "...",
-        src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
-      },
-      {
-        id: 3,
-        title: "Artist",
-        description: "LoremIpsum",
-        artist: 'Ahmet',
-        image: "...",
-        src: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3'
-      },
-      {
-        id: 4,
-        title: "I feel lucky!",
-        description: "LoremIpsum",
-        artist: 'Ahmet',
-        image: "...",
-        src: "file:///C:/Users/egesua/Desktop/Pink%20Floyd%20%20Wish%20You%20Were%20Here.mp3"
-      }
-    ];
+  return (
+    <div className="flex items-center justify-center">
+      <Section title="Let's get started!">
+        <div className="flex space-x-4 items-center">
+        {dropdownItems.map((item) => (
+          <Dropdown key={item.id}>
+            <Dropdown.Toggle variant="success" id={`dropdown-${item.id}`}>
+            {item.title}
+            </Dropdown.Toggle>
 
-    return (
-        <div>
-            <Section
-             title="Recently Played"
-             items={items} />
+            <Dropdown.Menu>
+              <Dropdown.Item key={item.id} href="#">
+                {item.title} Action
+              </Dropdown.Item>
+
+            </Dropdown.Menu>
+          </Dropdown>
+        ))}
+        <Button variant="primary">I feel lucky!</Button>
         </div>
-    )
+      </Section>
+    </div>
+  );
 }
 
-export default Home
+export default Home;
