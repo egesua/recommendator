@@ -5,15 +5,14 @@ import Collections from "views/Collections"
 
 function Content() {
     return(
-        <main className="flex-auto overflow-auto">
+        <main className="flex-auto overflow-auto space-y-6">
             <Navbar />
-            <div className="px-6 pt-2">
+            <div className="px-6 pt-2 space-y-6">
             <Routes>
                 <Route path="/" element = {<Home />} />
                 <Route path="/collections" element = { <Collections /> } />
             </Routes>
             </div>
-            Content here...
         </main>
     )
 }
